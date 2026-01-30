@@ -4,3 +4,4 @@ __pycache__/
 venv/
 .env
 great_expectations/uncommitted/
+uncommitted/
