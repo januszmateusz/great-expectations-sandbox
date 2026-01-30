@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+gx/uncommitted/
+**/.ge_store_backend_id
