@@ -1,0 +1,292 @@
+{
+  "expectations": [
+    {
+      "id": "da8caa01-b6f8-438b-b0c6-edd6ddc7ba40",
+      "kwargs": {
+        "column_list": [
+          "flight_id",
+          "flight_date",
+          "departure_airport",
+          "arrival_airport",
+          "scheduled_departure",
+          "actual_departure",
+          "delay_minutes",
+          "passenger_count",
+          "aircraft_type",
+          "ticket_revenue",
+          "fuel_cost",
+          "status",
+          "scheduled_departure_dt",
+          "actual_departure_dt"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_table_columns_to_match_ordered_list"
+    },
+    {
+      "id": "bdd80df1-31c5-448f-bba9-18cd5bba095b",
+      "kwargs": {
+        "value": 14
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_table_column_count_to_equal"
+    },
+    {
+      "id": "f2305ff3-1da3-4925-ba91-dc847500f144",
+      "kwargs": {
+        "column": "flight_id",
+        "mostly": 0.95,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "IN",
+          "parameter": [
+            "ON_TIME",
+            "COMPLETED",
+            "DELAYED"
+          ],
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "547f4cfb-cfe8-481f-9130-3229d86938fc",
+      "kwargs": {
+        "column": "flight_date",
+        "mostly": 0.95,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "IN",
+          "parameter": [
+            "ON_TIME",
+            "COMPLETED",
+            "DELAYED"
+          ],
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "5f88bd4f-9ae1-41f4-94d7-5d2fffd70e91",
+      "kwargs": {
+        "column": "departure_airport",
+        "mostly": 0.95,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "IN",
+          "parameter": [
+            "ON_TIME",
+            "COMPLETED",
+            "DELAYED"
+          ],
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "54b4505e-1753-47cc-a39f-9d4a15c5beb1",
+      "kwargs": {
+        "column": "actual_departure",
+        "mostly": 0.95,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "IN",
+          "parameter": [
+            "ON_TIME",
+            "COMPLETED",
+            "DELAYED"
+          ],
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "26a063e5-fefd-4d51-90d9-84f36081e1bc",
+      "kwargs": {
+        "column": "scheduled_departure",
+        "mostly": 0.95,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "IN",
+          "parameter": [
+            "ON_TIME",
+            "COMPLETED",
+            "DELAYED"
+          ],
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "96e3fdcf-7dba-4ff2-a3a7-978f0225e244",
+      "kwargs": {
+        "column": "arrival_airport",
+        "mostly": 0.95,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "IN",
+          "parameter": [
+            "ON_TIME",
+            "COMPLETED",
+            "DELAYED"
+          ],
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "af00e684-5018-4974-a743-36cad14d6478",
+      "kwargs": {
+        "column": "passenger_count",
+        "max_value": 400.0,
+        "min_value": 1.0,
+        "mostly": 0.95
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "a3fa4b86-dae3-46ea-b9f1-8d3d4ac06a17",
+      "kwargs": {
+        "column": "ticket_revenue",
+        "min_value": 0.0,
+        "strict_min": true
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "7a8e9f93-8367-47ca-878e-4311ae598792",
+      "kwargs": {
+        "column": "departure_airport",
+        "mostly": 0.95,
+        "value_set": [
+          "WAW",
+          "KRK",
+          "GDN",
+          "WRO",
+          "KTW",
+          "POZ",
+          "RZE",
+          "SZZ"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_in_set"
+    },
+    {
+      "id": "0a9fa215-ee97-4554-9d4e-0c98198ffda2",
+      "kwargs": {
+        "column": "flight_id",
+        "regex": "^LO\\d{2,4}$"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "3ba764ea-ea38-48c5-b44d-0285d431667f",
+      "kwargs": {
+        "column": "departure_airport",
+        "regex": "^[A-Z]{3}$"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "81ad6bee-e46f-4754-ac37-9cf52ec7571a",
+      "kwargs": {
+        "column": "arrival_airport",
+        "regex": "^[A-Z]{3}$"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_match_regex"
+    },
+    {
+      "id": "ad617e98-87c3-4289-ab84-7a2c11701da1",
+      "kwargs": {
+        "column_A": "ticket_revenue",
+        "column_B": "fuel_cost",
+        "mostly": 0.9
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "id": "2fce3d36-6fad-46a2-ac67-3291512109b3",
+      "kwargs": {
+        "column_A": "actual_departure_dt",
+        "column_B": "scheduled_departure_dt",
+        "ignore_row_if": "either_value_is_missing",
+        "mostly": 0.9,
+        "or_equal": true,
+        "row_condition": {
+          "column": {
+            "name": "status"
+          },
+          "operator": "!=",
+          "parameter": "CANCELLED",
+          "type": "comparison"
+        }
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_pair_values_a_to_be_greater_than_b"
+    },
+    {
+      "id": "a73b391a-c2fd-49fd-a84d-70f40a5ce299",
+      "kwargs": {
+        "column_list": [
+          "flight_id",
+          "flight_date"
+        ]
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_compound_columns_to_be_unique"
+    }
+  ],
+  "id": "50b9ae04-73e8-47ea-89a4-a88a60cc5048",
+  "meta": {
+    "great_expectations_version": "1.11.3"
+  },
+  "name": "flight_data_quality_suite",
+  "notes": null
+}
