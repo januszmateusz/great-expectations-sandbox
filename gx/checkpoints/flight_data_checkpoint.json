@@ -1,0 +1,20 @@
+{
+  "actions": [
+    {
+      "name": "update_all_data_docs",
+      "site_names": [],
+      "type": "update_data_docs"
+    }
+  ],
+  "id": "3ef783ef-c732-4a60-9346-13b7324aeb4b",
+  "name": "flight_data_checkpoint",
+  "result_format": {
+    "result_format": "COMPLETE"
+  },
+  "validation_definitions": [
+    {
+      "id": "de40a894-cb22-44d0-aec5-e80c85eae873",
+      "name": "flight_data_validation_definition"
+    }
+  ]
+}
